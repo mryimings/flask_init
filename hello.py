@@ -1,22 +1,19 @@
 import os
 
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Index Page"
+    # url_for does not need to change everywhere
+    return url_for("show_user_profile", username='Richard')
 
-@app.route('/user/<username>')
+@app.route('/username/<username>')
 def show_user_profile(username):
     # show the user profile for that user
     # print("The type of the username is ", type(username))
     return "User %s" % username
-
-@app.route('/hello')
-def hello_world():
-    return 'hello world'
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
