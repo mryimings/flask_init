@@ -1,6 +1,12 @@
 <!doctype html>
-<title>Login Page</title>
+<html>
 
+<head>
+<title>Login Page - The Acme Co.</title>
+</head>
+
+<body>
+<h1>The Acme Co.</h1>
 <form action="{{ url_for('login') }}" method="POST">
     {% if error %}
     <p style="color:#8d69ff">
@@ -15,3 +21,5 @@
     </p>
     <button type="Submit">Login</button>
 </form>
+</body>
+</html>
