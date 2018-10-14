@@ -3,14 +3,12 @@
 {% block title %}Welcome{% endblock%}
 
 {% block head %}
-
 {{ super() }}
     <script type="text/javascipt">var x = 1;</script>
-
 {% endblock %}
 
 {% block content %}
 
-<p> Welcome, {{ username }}</p>
+<p> Welcome, {{ username }} - <a href="{{ url_for('logout') }}">logout</a></p>
 
 {% endblock %}
